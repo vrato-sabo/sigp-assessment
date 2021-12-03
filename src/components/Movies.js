@@ -45,7 +45,7 @@ function Movies() {
   }
   return (
     <InfiniteScroll
-      dataLength={items.length + 10}
+      dataLength={items?.length + 10}
       next={fetchData}
       hasMore={items?.length + 10 === data ? false : true}
       loader={null}
