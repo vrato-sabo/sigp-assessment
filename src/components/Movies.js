@@ -13,15 +13,19 @@ function Movies() {
   const input = inputState;
 
   const fetchData = async () => {
-    setPageNum((prevState) => prevState + 1);
-    const res = await fetch(
-      `http://www.omdbapi.com/?apikey=${REACT_APP_API_KEY}&s=${input}&page=${pageNum}&type=movie`
-    );
-    const data = await res.json();
-    setData(Number(data.totalResults));
-    items.length === 0
-      ? setItems(data.Search)
-      : setItems(items?.concat(data.Search));
+    try {
+      setPageNum((prevState) => prevState + 1);
+      const res = await fetch(
+        `http://www.omdbapi.com/?apikey=${REACT_APP_API_KEY}&s=${input}&page=${pageNum}&type=movie`
+      );
+      const data = await res.json();
+      setData(Number(data.totalResults));
+      items.length === 0
+        ? setItems(data.Search)
+        : setItems(items?.concat(data.Search));
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const scrollToTop = (e) => {

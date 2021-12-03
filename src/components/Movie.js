@@ -6,7 +6,7 @@ function Movie({ id, title, poster, year, type }) {
       <div
         id={id}
         className='w-full flex flex-col justify-center items-center p-3 cursor-pointer relative '>
-        <div className=' w-72 h-450 flex flex-col justify-center items-center rounded-xl hover:bg-gray-700 p-3 transform hover:scale-105 transition-all ease-out duration-200'>
+        <div className=' w-72 h-450 flex flex-col justify-center items-center rounded-xl hover:bg-activeGray p-3 transform hover:scale-105 transition-all ease-out duration-200'>
           <div>
             {poster !== 'N/A' || !poster ? (
               <img src={poster} alt='' className=' max-h-96' />
@@ -17,7 +17,7 @@ function Movie({ id, title, poster, year, type }) {
             )}
           </div>
 
-          <h1 className=' truncate w-full text-center font-semibold p-1'>
+          <h1 className=' truncate w-full text-center font-semibold p-1 pb-7'>
             {title}
           </h1>
           <div className='flex w-56 justify-between text-sm'>

@@ -5,7 +5,6 @@ function* workGetMoviesFetch(action) {
   const { REACT_APP_API_KEY } = process.env;
   const movies = yield call(() =>
     fetch(
-      //   `http://www.omdbapi.com/?apikey=${REACT_APP_API_KEY}&s=${input}&page=${pageNum}&type=movie`
       `http://www.omdbapi.com/?apikey=${REACT_APP_API_KEY}&s=${action.payload.input}&type=movie&page=${action.payload.pageNum}`
     )
   );

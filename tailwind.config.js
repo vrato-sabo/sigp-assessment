@@ -3,6 +3,13 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      colors: {
+        darkGray: '#2d2d2d',
+        activeGray: '#525050',
+        activePink: '#d01345',
+        lightGray: '#efefef',
+        btnGreen: '#018849',
+      },
       height: {
         360: '360px',
         450: '450px',
