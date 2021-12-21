@@ -35,6 +35,12 @@ function Movies() {
       behavior: 'smooth',
     });
   };
+  
+    useEffect(() => {
+    setItems([]);
+    setPageNum(2);
+  }, [input]);
+  
 
   if (movies.Error) {
     return (
